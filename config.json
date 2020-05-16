@@ -1,0 +1,10 @@
+{
+  "app": {
+    "title": "v2ray-E",
+    "width": 600,
+    "height": 400,
+    "icon": "./assets/v2ray_1024.ico"
+  },
+  "file": "./src/index.html",
+  "dev": true
+}

@@ -1,0 +1,85 @@
+{
+  "inbounds": [
+    {
+      "port": 45120,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "userLevel": 0,
+        "udp": true
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      }
+    }
+  ],
+
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "104.36.68.158",
+            "port": 32871,
+            "users": [
+              {
+                "id": "19f7cf7d-e206-40ab-911a-f4330755a8cc",
+                "alterId": 64,
+                "level": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "userLevel": 0
+      },
+      "tag": "direct"
+    }
+  ],
+
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": ["geosite:cn"],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "ip": ["geoip:cn", "geoip:private"]
+      }
+    ]
+  },
+
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      {
+        "address": "114.114.114.114",
+        "domains": ["geosite:cn"]
+      },
+      "8.8.8.8",
+      "localhost"
+    ]
+  },
+
+  "policy": {
+    "levels": {
+      "0": {
+        "uplinkOnly": 0,
+        "downlinkOnly": 0
+      }
+    },
+    "system": {
+      "statsInboundUplink": false,
+      "statsInboundDownlink": false
+    }
+  }
+}

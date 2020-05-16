@@ -1,0 +1,53 @@
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 45px;
+  display: flex;
+}
+
+/* Aside */
+.top .aside {
+  width: 150px;
+  border-right: 1px solid;
+}
+.top .aside .aside-new {
+  border-bottom: 1px solid;
+  text-align: center;
+  cursor: pointer;
+  line-height: 30px;
+  user-select: none;
+}
+.top .aside .aside-new:hover {
+  background-color: #eee;
+}
+.top .aside .aside-config {
+  border-bottom: 1px solid;
+  text-align: center;
+  cursor: pointer;
+  line-height: 30px;
+  user-select: none;
+}
+.top .aside .aside-config:hover {
+  background-color: #eee;
+}
+
+/* Edit */
+.top .edit {
+  flex: 1;
+}
+.top .edit {
+  display: flex;
+}
+.top .edit .inb {
+  flex: 1;
+  border-right: 1px solid;
+}
+.top .edit .out {
+  flex: 1;
+}
+.top .edit .inb .item,
+.top .edit .out .item {
+  text-align: center;
+}
